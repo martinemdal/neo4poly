@@ -1,12 +1,14 @@
 package com.martinfolke.neo4jpoly.entity;
 
 import org.neo4j.ogm.annotation.NodeEntity;
+import org.neo4j.ogm.annotation.Relationship;
 
 @NodeEntity
 public class Strawberry extends Ingredient {
 
     String color;
 
+    @Relationship(type = "TASTES_LIKE")
     Flavor flavor;
 
     public String getColor() {
